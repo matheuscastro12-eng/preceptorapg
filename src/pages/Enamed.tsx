@@ -131,12 +131,12 @@ const Enamed = () => {
                 PREPARATÓRIO
               </span>
               <h1
-                className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#191c1d] mb-2"
+                className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#191c1d] mb-2"
                 style={{ fontFamily: "'Manrope', sans-serif" }}
               >
                 ENAMED Preparatório
               </h1>
-              <p className="text-[#3e4945] max-w-2xl leading-relaxed">
+              <p className="text-sm sm:text-base text-[#3e4945] max-w-2xl leading-relaxed">
                 Questões no padrão INEP — vinhetas clínicas, raciocínio diagnóstico e conduta.
               </p>
             </div>
@@ -155,7 +155,7 @@ const Enamed = () => {
                     onClick={() => startBankMode('completo')}
                     className="group text-left disabled:opacity-50"
                   >
-                    <div className="relative p-7 rounded-2xl border-2 border-amber-200/60 bg-white transition-all duration-300 group-hover:border-amber-300 group-hover:shadow-lg group-hover:-translate-y-0.5 group-active:scale-[0.98]">
+                    <div className="relative p-4 sm:p-7 rounded-2xl border-2 border-amber-200/60 bg-white transition-all duration-300 group-hover:border-amber-300 group-hover:shadow-lg group-hover:-translate-y-0.5 group-active:scale-[0.98]">
                       <div className="w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center mb-4 group-hover:bg-amber-100 group-hover:scale-105 transition-all duration-300">
                         <MI name="assignment" className="text-[28px] text-amber-600" />
                       </div>
@@ -172,7 +172,7 @@ const Enamed = () => {
                     onClick={() => startBankMode('revisao')}
                     className="group text-left disabled:opacity-50"
                   >
-                    <div className="relative p-7 rounded-2xl border-2 border-slate-200/60 bg-white transition-all duration-300 group-hover:border-[#006D5B]/30 group-hover:shadow-lg group-hover:-translate-y-0.5 group-active:scale-[0.98]">
+                    <div className="relative p-4 sm:p-7 rounded-2xl border-2 border-slate-200/60 bg-white transition-all duration-300 group-hover:border-[#006D5B]/30 group-hover:shadow-lg group-hover:-translate-y-0.5 group-active:scale-[0.98]">
                       <div className="w-14 h-14 rounded-xl bg-[#f3f4f5] flex items-center justify-center mb-4 group-hover:bg-[#c8eade] group-hover:scale-105 transition-all duration-300">
                         <MI name="shuffle" className="text-[28px] text-[#6e7975] group-hover:text-[#005344] transition-colors duration-300" />
                       </div>
@@ -201,7 +201,7 @@ const Enamed = () => {
                     onClick={() => startIaMode('ia_completo')}
                     className="group text-left disabled:opacity-50"
                   >
-                    <div className="relative p-7 rounded-2xl border-2 border-[#006D5B]/15 bg-white transition-all duration-300 group-hover:border-[#006D5B]/30 group-hover:shadow-lg group-hover:-translate-y-0.5 group-active:scale-[0.98]">
+                    <div className="relative p-4 sm:p-7 rounded-2xl border-2 border-[#006D5B]/15 bg-white transition-all duration-300 group-hover:border-[#006D5B]/30 group-hover:shadow-lg group-hover:-translate-y-0.5 group-active:scale-[0.98]">
                       <div className="w-14 h-14 rounded-xl bg-[#c8eade] flex items-center justify-center mb-4 group-hover:bg-[#9df3dc] group-hover:scale-105 transition-all duration-300">
                         <MI name="psychology" className="text-[28px] text-[#005344]" />
                       </div>
@@ -218,7 +218,7 @@ const Enamed = () => {
                     onClick={() => setMode('ia_area')}
                     className="group text-left disabled:opacity-50"
                   >
-                    <div className="relative p-7 rounded-2xl border-2 border-slate-200/60 bg-white transition-all duration-300 group-hover:border-[#006D5B]/30 group-hover:shadow-lg group-hover:-translate-y-0.5 group-active:scale-[0.98]">
+                    <div className="relative p-4 sm:p-7 rounded-2xl border-2 border-slate-200/60 bg-white transition-all duration-300 group-hover:border-[#006D5B]/30 group-hover:shadow-lg group-hover:-translate-y-0.5 group-active:scale-[0.98]">
                       <div className="w-14 h-14 rounded-xl bg-[#f3f4f5] flex items-center justify-center mb-4 group-hover:bg-[#c8eade] group-hover:scale-105 transition-all duration-300">
                         <MI name="target" className="text-[28px] text-[#6e7975] group-hover:text-[#005344] transition-colors duration-300" />
                       </div>
@@ -290,7 +290,7 @@ const Enamed = () => {
                 {mode === 'completo' ? 'Simulado Completo' : 'Revisão Rápida'}
               </span>
             </div>
-            <div className="flex gap-4 h-[calc(100vh-10rem)]">
+            <div className="flex flex-col lg:flex-row gap-4 min-h-[50vh] lg:h-[calc(100vh-10rem)]">
               <div className="flex-1 min-w-0 rounded-2xl bg-white border border-slate-100 shadow-[0_8px_32px_0_rgba(44,52,52,0.06)] p-4 sm:p-6 flex flex-col overflow-hidden">
                 <EnamedBankSimulation
                   questions={questions}
@@ -322,7 +322,7 @@ const Enamed = () => {
                 ENAMED IA {selectedArea ? `— ${AREA_LABELS[selectedArea]}` : '— Simulado'}
               </span>
             </div>
-            <div className="flex gap-4 h-[calc(100vh-10rem)]">
+            <div className="flex flex-col lg:flex-row gap-4 min-h-[50vh] lg:h-[calc(100vh-10rem)]">
               <div className="flex-1 min-w-0 rounded-2xl bg-white border border-slate-100 shadow-[0_8px_32px_0_rgba(44,52,52,0.06)] p-4 sm:p-6 flex flex-col overflow-hidden">
                 {showIaSimulation && hasIaQuestions ? (
                   <SimulationView

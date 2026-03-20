@@ -48,10 +48,10 @@ const Landing = () => {
 
       {/* ─── Header ───────────────────────────────────── */}
       <header className="bg-white/80 backdrop-blur-xl shadow-[0px_4px_20px_rgba(25,28,29,0.06)] sticky top-0 z-50">
-        <nav className="flex justify-between items-center w-full px-6 md:px-12 py-4 max-w-7xl mx-auto">
-          <div className="flex items-center gap-2.5">
-            <img src={logoIcon} alt="PreceptorMED" className="h-7 w-7" />
-            <span className="text-2xl font-extrabold text-[#006D5B] tracking-tighter" style={{ fontFamily: "'Manrope', sans-serif" }}>
+        <nav className="flex justify-between items-center w-full px-4 sm:px-6 md:px-12 py-3 sm:py-4 max-w-7xl mx-auto">
+          <div className="flex items-center gap-2">
+            <img src={logoIcon} alt="PreceptorMED" className="h-6 w-6 sm:h-7 sm:w-7" />
+            <span className="text-lg sm:text-2xl font-extrabold text-[#006D5B] tracking-tighter" style={{ fontFamily: "'Manrope', sans-serif" }}>
               PreceptorMED
             </span>
           </div>
@@ -63,26 +63,26 @@ const Landing = () => {
           </div>
 
           {!loading && user ? (
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1 sm:gap-2">
               <button
                 onClick={() => navigate('/menu')}
-                className="px-5 py-2 text-slate-600 font-semibold hover:text-[#006D5B] transition-colors duration-300 text-sm"
+                className="px-3 sm:px-5 py-2 text-slate-600 font-semibold hover:text-[#006D5B] transition-colors duration-300 text-xs sm:text-sm"
               >
                 Meu Painel
               </button>
               <ProfileDropdown userEmail={user.email || ''} onLogout={signOut} />
             </div>
           ) : (
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <button
                 onClick={() => navigate('/auth')}
-                className="px-5 py-2 text-slate-600 font-semibold hover:text-[#006D5B] transition-colors duration-300 text-sm"
+                className="hidden sm:block px-5 py-2 text-slate-600 font-semibold hover:text-[#006D5B] transition-colors duration-300 text-sm"
               >
                 Entrar
               </button>
               <button
                 onClick={() => navigate('/auth?tab=signup')}
-                className="px-6 py-2.5 bg-[#006D5B] text-white rounded-lg font-bold tracking-tight shadow-lg hover:bg-[#005344] active:scale-95 transition-all duration-200 text-sm"
+                className="px-4 sm:px-6 py-2 sm:py-2.5 bg-[#006D5B] text-white rounded-lg font-bold tracking-tight shadow-lg hover:bg-[#005344] active:scale-95 transition-all duration-200 text-xs sm:text-sm"
               >
                 Começar agora
               </button>
@@ -94,39 +94,39 @@ const Landing = () => {
       <main className="flex-1">
 
         {/* ─── Hero ─────────────────────────────────────── */}
-        <section className="relative pt-20 pb-32 px-6 overflow-hidden">
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        <section className="relative pt-12 sm:pt-20 pb-16 sm:pb-32 px-4 sm:px-6 overflow-hidden">
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 sm:gap-16">
             <div className="lg:w-1/2 animate-fade-up">
-              <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest uppercase bg-[#c8eade] text-[#005344] rounded-full">
+              <span className="inline-block px-3 sm:px-4 py-1.5 mb-4 sm:mb-6 text-[10px] sm:text-xs font-bold tracking-widest uppercase bg-[#c8eade] text-[#005344] rounded-full">
                 Curadoria Médica de Elite
               </span>
               <h1
-                className="text-5xl md:text-7xl font-extrabold leading-[1.1] mb-8 tracking-tighter text-[#191c1d]"
+                className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] mb-5 sm:mb-8 tracking-tighter text-[#191c1d]"
                 style={{ fontFamily: "'Manrope', sans-serif" }}
               >
                 Apoio clínico de elite para sua jornada médica.
               </h1>
-              <p className="text-xl md:text-2xl text-slate-500 font-light leading-relaxed mb-10 max-w-xl">
+              <p className="text-base sm:text-xl md:text-2xl text-slate-500 font-light leading-relaxed mb-8 sm:mb-10 max-w-xl">
                 Estude com resumos estruturados e casos reais gerados por IA acadêmica. Criado para quem não tem tempo a perder.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button
                   onClick={() => navigate('/auth?tab=signup')}
-                  className="btn-shimmer relative overflow-hidden px-8 py-4 bg-[#005344] text-white text-sm font-bold uppercase tracking-widest rounded-lg shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
+                  className="btn-shimmer relative overflow-hidden px-6 sm:px-8 py-3.5 sm:py-4 bg-[#005344] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-lg shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:scale-95 transition-all duration-300 text-center"
                 >
                   Começar agora
                 </button>
                 <button
                   onClick={() => document.getElementById('como-funciona')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="px-8 py-4 border border-slate-200 text-[#191c1d] text-sm font-bold uppercase tracking-widest rounded-lg hover:bg-slate-50 active:scale-95 transition-all duration-300"
+                  className="px-6 sm:px-8 py-3.5 sm:py-4 border border-slate-200 text-[#191c1d] text-xs sm:text-sm font-bold uppercase tracking-widest rounded-lg hover:bg-slate-50 active:scale-95 transition-all duration-300 text-center"
                 >
                   Ver demonstração
                 </button>
               </div>
             </div>
 
-            <div className="lg:w-1/2 relative animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 bg-gradient-to-br from-[#e8f5f1] to-[#d0ebe4] p-1">
+            <div className="lg:w-1/2 relative animate-fade-up w-full" style={{ animationDelay: '0.2s' }}>
+              <div className="relative z-10 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl rotate-1 sm:rotate-2 hover:rotate-0 transition-transform duration-500 bg-gradient-to-br from-[#e8f5f1] to-[#d0ebe4] p-1">
                 {/* App mockup */}
                 <div className="bg-white rounded-xl overflow-hidden">
                   {/* Mockup top bar */}
@@ -141,7 +141,7 @@ const Landing = () => {
                     </div>
                   </div>
                   {/* Mockup sidebar + content */}
-                  <div className="flex h-[440px] lg:h-[540px]">
+                  <div className="flex h-[300px] sm:h-[440px] lg:h-[540px]">
                     {/* Mini sidebar */}
                     <div className="w-14 flex-shrink-0 flex flex-col items-center py-4 gap-4" style={{ background: 'linear-gradient(180deg, #005344 0%, #006d5b 100%)' }}>
                       <img src={logoIcon} alt="" className="w-7 h-7 brightness-0 invert" />
@@ -154,9 +154,9 @@ const Landing = () => {
                       </div>
                     </div>
                     {/* Content area */}
-                    <div className="flex-1 bg-[#f8f9fa] p-6 overflow-hidden">
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-2 mb-6">
+                    <div className="flex-1 bg-[#f8f9fa] p-3 sm:p-6 overflow-hidden">
+                      <div className="space-y-3 sm:space-y-4">
+                        <div className="flex items-center gap-2 mb-3 sm:mb-6">
                           <div className="w-8 h-8 rounded-lg bg-[#006D5B]/10 flex items-center justify-center">
                             <span className="material-symbols-outlined text-[#006D5B] text-[18px]">auto_awesome</span>
                           </div>
@@ -201,21 +201,21 @@ const Landing = () => {
         </section>
 
         {/* ─── Features Section ─────────────────────────── */}
-        <section id="recursos" className="py-24 bg-[#f3f4f5]">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-20 text-center md:text-left max-w-3xl">
+        <section id="recursos" className="py-14 sm:py-24 bg-[#f3f4f5]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="mb-10 sm:mb-20 text-center md:text-left max-w-3xl">
               <h2
-                className="text-4xl md:text-5xl font-bold tracking-tight mb-6"
+                className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 sm:mb-6"
                 style={{ fontFamily: "'Manrope', sans-serif" }}
               >
                 Ferramentas que falam a língua do médico.
               </h2>
-              <p className="text-lg text-slate-500 leading-relaxed">
+              <p className="text-sm sm:text-lg text-slate-500 leading-relaxed">
                 Desenvolvemos uma interface que prioriza a cognição clínica. Sem ruído, apenas o que é essencial para o seu diagnóstico e aprendizado.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
               {[
                 {
                   icon: 'description',
@@ -240,7 +240,7 @@ const Landing = () => {
               ].map((feature, i) => (
                 <div
                   key={i}
-                  className="bg-white p-8 rounded-xl shadow-[0px_4px_20px_rgba(25,28,29,0.06)] hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group"
+                  className="bg-white p-5 sm:p-8 rounded-xl shadow-[0px_4px_20px_rgba(25,28,29,0.06)] hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group"
                 >
                   <div className="w-12 h-12 bg-[#006D5B]/10 flex items-center justify-center rounded-lg mb-6 group-hover:bg-[#006D5B] transition-colors duration-300">
                     <MI name={feature.icon} className="text-[#006D5B] group-hover:text-white transition-colors duration-300" />
@@ -259,11 +259,11 @@ const Landing = () => {
         </section>
 
         {/* ─── Editorial Content Block ─────────────────── */}
-        <section id="como-funciona" className="py-32 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
+        <section id="como-funciona" className="py-16 sm:py-32 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-12 gap-6 items-center">
-              <div className="col-span-12 lg:col-span-5 mb-12 lg:mb-0">
-                <div className="rounded-2xl shadow-lg w-full h-[500px] bg-gradient-to-br from-[#e8f5f1] to-[#d0ebe4] p-1 overflow-hidden">
+              <div className="col-span-12 lg:col-span-5 mb-8 lg:mb-0">
+                <div className="rounded-xl sm:rounded-2xl shadow-lg w-full h-[350px] sm:h-[500px] bg-gradient-to-br from-[#e8f5f1] to-[#d0ebe4] p-1 overflow-hidden">
                   <div className="bg-white rounded-xl h-full overflow-hidden flex flex-col">
                     {/* Mockup header */}
                     <div className="flex items-center gap-2 px-4 py-3 bg-slate-50 border-b border-slate-100">
@@ -274,8 +274,8 @@ const Landing = () => {
                       </div>
                     </div>
                     {/* Simulados mockup */}
-                    <div className="flex-1 bg-[#f8f9fa] p-6 overflow-hidden">
-                      <div className="flex items-center gap-2 mb-5">
+                    <div className="flex-1 bg-[#f8f9fa] p-3 sm:p-6 overflow-hidden">
+                      <div className="flex items-center gap-2 mb-3 sm:mb-5">
                         <span className="material-symbols-outlined text-[#006D5B]">shutter_speed</span>
                         <div className="h-3.5 w-32 bg-slate-300 rounded-full" />
                       </div>
@@ -314,14 +314,14 @@ const Landing = () => {
 
               <div className="col-span-12 lg:col-span-6 lg:col-start-7">
                 <h2
-                  className="text-4xl font-bold mb-8 leading-tight text-[#191c1d]"
+                  className="text-2xl sm:text-4xl font-bold mb-6 sm:mb-8 leading-tight text-[#191c1d]"
                   style={{ fontFamily: "'Manrope', sans-serif" }}
                 >
                   Inteligência artificial aplicada ao ensino médico.
                 </h2>
 
-                <div className="space-y-8">
-                  <div className="flex gap-6">
+                <div className="space-y-6 sm:space-y-8">
+                  <div className="flex gap-4 sm:gap-6">
                     <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-[#005344] text-white font-bold text-xs italic">01</div>
                     <div>
                       <h4
@@ -336,7 +336,7 @@ const Landing = () => {
                     </div>
                   </div>
 
-                  <div className="flex gap-6">
+                  <div className="flex gap-4 sm:gap-6">
                     <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-[#005344] text-white font-bold text-xs italic">02</div>
                     <div>
                       <h4
@@ -351,7 +351,7 @@ const Landing = () => {
                     </div>
                   </div>
 
-                  <div className="flex gap-6">
+                  <div className="flex gap-4 sm:gap-6">
                     <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-[#005344] text-white font-bold text-xs italic">03</div>
                     <div>
                       <h4
@@ -372,27 +372,27 @@ const Landing = () => {
         </section>
 
         {/* ─── Pricing ──────────────────────────────────── */}
-        <section id="precos" className="py-24 bg-[#f3f4f5]">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
+        <section id="precos" className="py-14 sm:py-24 bg-[#f3f4f5]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="text-center mb-10 sm:mb-16">
               <h2
-                className="text-4xl font-bold mb-4 tracking-tight text-[#191c1d]"
+                className="text-2xl sm:text-4xl font-bold mb-3 sm:mb-4 tracking-tight text-[#191c1d]"
                 style={{ fontFamily: "'Manrope', sans-serif" }}
               >
                 O plano certo para cada etapa.
               </h2>
-              <p className="text-slate-500">Invista na sua excelência clínica com transparência.</p>
+              <p className="text-sm sm:text-base text-slate-500">Invista na sua excelência clínica com transparência.</p>
             </div>
 
-            <div className="flex flex-col md:flex-row justify-center gap-8 max-w-5xl mx-auto">
+            <div className="flex flex-col md:flex-row justify-center gap-4 sm:gap-8 max-w-5xl mx-auto">
               {/* Mensal */}
-              <div className="flex-1 bg-white p-10 rounded-2xl shadow-[0px_4px_20px_rgba(25,28,29,0.06)] border border-slate-200/30 hover:shadow-xl transition-all duration-300">
-                <h3 className="text-xl font-bold mb-2 text-[#191c1d]" style={{ fontFamily: "'Manrope', sans-serif" }}>Plano Mensal</h3>
-                <div className="mb-6">
-                  <span className="text-4xl font-extrabold text-[#005344]">R$ 49,90</span>
+              <div className="flex-1 bg-white p-6 sm:p-10 rounded-2xl shadow-[0px_4px_20px_rgba(25,28,29,0.06)] border border-slate-200/30 hover:shadow-xl transition-all duration-300">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 text-[#191c1d]" style={{ fontFamily: "'Manrope', sans-serif" }}>Plano Mensal</h3>
+                <div className="mb-4 sm:mb-6">
+                  <span className="text-3xl sm:text-4xl font-extrabold text-[#005344]">R$ 49,90</span>
                   <span className="text-slate-500">/mês</span>
                 </div>
-                <ul className="space-y-4 mb-10 text-sm text-[#191c1d]">
+                <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-10 text-sm text-[#191c1d]">
                   <li className="flex items-center gap-3">
                     <MI name="check_circle" fill className="text-[#006D5B] text-lg" />
                     Acesso completo à plataforma
@@ -409,7 +409,7 @@ const Landing = () => {
                 <button
                   onClick={() => handleSubscribe('monthly')}
                   disabled={loadingPlan !== null}
-                  className="w-full py-4 border border-slate-300 text-[#191c1d] text-sm font-bold uppercase tracking-widest rounded-lg hover:bg-slate-50 hover:border-slate-400 transition-all duration-200 active:scale-[0.98] disabled:opacity-50"
+                  className="w-full py-3 sm:py-4 border border-slate-300 text-[#191c1d] text-xs sm:text-sm font-bold uppercase tracking-widest rounded-lg hover:bg-slate-50 hover:border-slate-400 transition-all duration-200 active:scale-[0.98] disabled:opacity-50"
                 >
                   {loadingPlan === 'monthly' && <Loader2 className="inline mr-2 h-4 w-4 animate-spin" />}
                   Começar mensal
@@ -417,17 +417,17 @@ const Landing = () => {
               </div>
 
               {/* Anual — highlighted */}
-              <div className="flex-1 bg-white p-10 rounded-2xl shadow-xl border-2 border-[#006D5B] relative overflow-hidden hover:shadow-2xl transition-all duration-300">
-                <div className="absolute top-0 right-0 bg-[#005344] text-white px-4 py-1 text-[10px] font-bold uppercase tracking-wider rounded-bl-lg">
+              <div className="flex-1 bg-white p-6 sm:p-10 rounded-2xl shadow-xl border-2 border-[#006D5B] relative overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <div className="absolute top-0 right-0 bg-[#005344] text-white px-3 sm:px-4 py-1 text-[10px] font-bold uppercase tracking-wider rounded-bl-lg">
                   Melhor Valor
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-[#191c1d]" style={{ fontFamily: "'Manrope', sans-serif" }}>Plano Anual</h3>
+                <h3 className="text-lg sm:text-xl font-bold mb-2 text-[#191c1d]" style={{ fontFamily: "'Manrope', sans-serif" }}>Plano Anual</h3>
                 <div className="mb-2">
-                  <span className="text-4xl font-extrabold text-[#005344]">R$ 350,90</span>
+                  <span className="text-3xl sm:text-4xl font-extrabold text-[#005344]">R$ 350,90</span>
                   <span className="text-slate-500">/ano</span>
                 </div>
                 <p className="text-xs text-[#006D5B] font-semibold mb-6">Equivale a R$ 29,24/mês (Economia de 41%)</p>
-                <ul className="space-y-4 mb-10 text-sm text-[#191c1d]">
+                <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-10 text-sm text-[#191c1d]">
                   <li className="flex items-center gap-3 font-semibold">
                     <MI name="check_circle" fill className="text-[#006D5B] text-lg" />
                     Tudo do plano mensal
@@ -444,7 +444,7 @@ const Landing = () => {
                 <button
                   onClick={() => handleSubscribe('annual')}
                   disabled={loadingPlan !== null}
-                  className="btn-shimmer relative overflow-hidden w-full py-4 bg-[#005344] text-white text-sm font-bold uppercase tracking-widest rounded-lg shadow-lg hover:bg-[#003d32] transition-all duration-200 active:scale-[0.98] disabled:opacity-50"
+                  className="btn-shimmer relative overflow-hidden w-full py-3 sm:py-4 bg-[#005344] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-lg shadow-lg hover:bg-[#003d32] transition-all duration-200 active:scale-[0.98] disabled:opacity-50"
                 >
                   {loadingPlan === 'annual' && <Loader2 className="inline mr-2 h-4 w-4 animate-spin" />}
                   Começar anual
@@ -452,14 +452,14 @@ const Landing = () => {
               </div>
 
               {/* Bianual */}
-              <div className="flex-1 bg-white p-10 rounded-2xl shadow-[0px_4px_20px_rgba(25,28,29,0.06)] border border-slate-200/30 hover:shadow-xl transition-all duration-300">
-                <h3 className="text-xl font-bold mb-2 text-[#191c1d]" style={{ fontFamily: "'Manrope', sans-serif" }}>Plano Bianual</h3>
+              <div className="flex-1 bg-white p-6 sm:p-10 rounded-2xl shadow-[0px_4px_20px_rgba(25,28,29,0.06)] border border-slate-200/30 hover:shadow-xl transition-all duration-300">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 text-[#191c1d]" style={{ fontFamily: "'Manrope', sans-serif" }}>Plano Bianual</h3>
                 <div className="mb-2">
-                  <span className="text-4xl font-extrabold text-[#005344]">R$ 599,90</span>
+                  <span className="text-3xl sm:text-4xl font-extrabold text-[#005344]">R$ 599,90</span>
                   <span className="text-slate-500">/2 anos</span>
                 </div>
                 <p className="text-xs text-[#006D5B] font-semibold mb-6">Equivale a R$ 24,99/mês (Economia de 50%)</p>
-                <ul className="space-y-4 mb-10 text-sm text-[#191c1d]">
+                <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-10 text-sm text-[#191c1d]">
                   <li className="flex items-center gap-3 font-semibold">
                     <MI name="check_circle" fill className="text-[#006D5B] text-lg" />
                     Tudo do plano anual
@@ -476,7 +476,7 @@ const Landing = () => {
                 <button
                   onClick={() => handleSubscribe('biannual')}
                   disabled={loadingPlan !== null}
-                  className="w-full py-4 border border-slate-300 text-[#191c1d] text-sm font-bold uppercase tracking-widest rounded-lg hover:bg-slate-50 hover:border-slate-400 transition-all duration-200 active:scale-[0.98] disabled:opacity-50"
+                  className="w-full py-3 sm:py-4 border border-slate-300 text-[#191c1d] text-xs sm:text-sm font-bold uppercase tracking-widest rounded-lg hover:bg-slate-50 hover:border-slate-400 transition-all duration-200 active:scale-[0.98] disabled:opacity-50"
                 >
                   {loadingPlan === 'biannual' && <Loader2 className="inline mr-2 h-4 w-4 animate-spin" />}
                   Começar bianual
@@ -487,20 +487,20 @@ const Landing = () => {
         </section>
 
         {/* ─── Final CTA ────────────────────────────────── */}
-        <section className="py-24" style={{ background: 'linear-gradient(135deg, #005344 0%, #006d5b 100%)' }}>
-          <div className="max-w-4xl mx-auto px-6 text-center">
+        <section className="py-14 sm:py-24" style={{ background: 'linear-gradient(135deg, #005344 0%, #006d5b 100%)' }}>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
             <h2
-              className="text-4xl md:text-5xl font-extrabold mb-8 tracking-tighter text-white"
+              className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-5 sm:mb-8 tracking-tighter text-white"
               style={{ fontFamily: "'Manrope', sans-serif" }}
             >
               Pronto para elevar seu padrão clínico?
             </h2>
-            <p className="text-xl text-white/70 mb-12 font-light">
+            <p className="text-base sm:text-xl text-white/70 mb-8 sm:mb-12 font-light">
               Junte-se a milhares de médicos que já transformaram suas rotinas de estudo.
             </p>
             <button
               onClick={() => navigate('/auth?tab=signup')}
-              className="px-10 py-5 bg-white text-[#005344] rounded-lg font-bold uppercase tracking-widest shadow-2xl hover:scale-105 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition-all duration-300 active:scale-95"
+              className="px-8 sm:px-10 py-4 sm:py-5 bg-white text-[#005344] rounded-lg text-sm sm:text-base font-bold uppercase tracking-widest shadow-2xl hover:scale-105 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition-all duration-300 active:scale-95"
             >
               Criar minha conta agora
             </button>
@@ -509,7 +509,7 @@ const Landing = () => {
       </main>
 
       {/* ─── Footer ───────────────────────────────────── */}
-      <footer className="bg-slate-50 border-t border-slate-200/50 py-12 px-6 md:px-12">
+      <footer className="bg-slate-50 border-t border-slate-200/50 py-8 sm:py-12 px-4 sm:px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-between items-start w-full max-w-7xl mx-auto gap-12">
           <div className="space-y-4">
             <div className="flex items-center gap-2.5">

@@ -200,7 +200,7 @@ const Exam = () => {
             </div>
 
             {/* Exam content area */}
-            <div className="flex flex-col lg:flex-row gap-4 min-h-[calc(100vh-10rem)]">
+            <div className="flex flex-col lg:flex-row gap-4 min-h-[50vh] lg:min-h-[calc(100vh-10rem)]">
               <div className="flex-1 min-w-0 rounded-xl bg-white border border-slate-100 shadow-[0_4px_20px_rgba(25,28,29,0.06)] p-4 sm:p-6 flex flex-col overflow-hidden">
                 {showSimulation && isProva ? (
                   <SimulationView
@@ -264,15 +264,15 @@ const Exam = () => {
             <div className="absolute top-60 -left-20 w-48 h-48 bg-[#006D5B]/6 rounded-full blur-3xl pointer-events-none animate-float" />
 
             {/* Header */}
-            <div className="mb-12 relative z-10 animate-fade-up">
+            <div className="mb-8 sm:mb-12 relative z-10 animate-fade-up">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c8eade] text-[#4c6a62] text-xs font-bold mb-4">
                 <MI name="shutter_speed" className="text-[14px]" />
                 SIMULAÇÕES
               </span>
-              <h2 className="font-['Manrope'] text-3xl sm:text-4xl font-extrabold text-[#191c1d] tracking-tight mb-3">
+              <h2 className="font-['Manrope'] text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#191c1d] tracking-tight mb-3">
                 {modeLabel} com IA
               </h2>
-              <p className="text-[#3e4945] max-w-2xl leading-relaxed">
+              <p className="text-sm sm:text-base text-[#3e4945] max-w-2xl leading-relaxed">
                 Configure e gere questões personalizadas baseadas nos seus resumos da biblioteca.
                 Nossa IA analisa seu progresso para criar o desafio ideal.
               </p>

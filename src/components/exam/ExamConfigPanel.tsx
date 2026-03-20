@@ -44,13 +44,13 @@ const ExamConfigPanel = ({
     : 'seus resumos';
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-10 sm:space-y-16">
       {/* ── Step 1: Tipo de Prática ── */}
       {!lockedMode && (
         <section className="animate-fade-up">
           <div className="flex items-center gap-3 mb-6">
             <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#006d5b] text-white text-sm font-bold shadow-lg shadow-[#006d5b]/20">1</span>
-            <h3 className="font-['Manrope'] text-xl font-bold text-[#191c1d]">Tipo de Prática</h3>
+            <h3 className="font-['Manrope'] text-lg sm:text-xl font-bold text-[#191c1d]">Tipo de Prática</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Card Prova */}
@@ -59,7 +59,7 @@ const ExamConfigPanel = ({
               disabled={generating}
               className="relative group text-left disabled:opacity-50"
             >
-              <div className={`relative p-7 rounded-2xl border-2 bg-white transition-all duration-300 group-active:scale-[0.98] group-hover:-translate-y-0.5 ${
+              <div className={`relative p-4 sm:p-7 rounded-2xl border-2 bg-white transition-all duration-300 group-active:scale-[0.98] group-hover:-translate-y-0.5 ${
                 isProva ? 'border-[#005344] shadow-lg shadow-[#005344]/8' : 'border-slate-200/60 hover:border-[#bec9c4]/60 hover:shadow-md'
               }`}>
                 <div className="flex items-start justify-between mb-4">
@@ -83,7 +83,7 @@ const ExamConfigPanel = ({
               disabled={generating}
               className="relative group text-left disabled:opacity-50"
             >
-              <div className={`relative p-7 rounded-2xl border-2 bg-white transition-all duration-300 group-active:scale-[0.98] group-hover:-translate-y-0.5 ${
+              <div className={`relative p-4 sm:p-7 rounded-2xl border-2 bg-white transition-all duration-300 group-active:scale-[0.98] group-hover:-translate-y-0.5 ${
                 isCasoClin ? 'border-[#005344] shadow-lg shadow-[#005344]/8' : 'border-slate-200/60 hover:border-[#bec9c4]/60 hover:shadow-md'
               }`}>
                 <div className="flex items-start justify-between mb-4">
@@ -111,7 +111,7 @@ const ExamConfigPanel = ({
             <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#006d5b] text-white text-sm font-bold shadow-lg shadow-[#006d5b]/20">
               {lockedMode ? '1' : '2'}
             </span>
-            <h3 className="font-['Manrope'] text-xl font-bold text-[#191c1d]">Selecione o conteúdo</h3>
+            <h3 className="font-['Manrope'] text-lg sm:text-xl font-bold text-[#191c1d]">Selecione o conteúdo</h3>
           </div>
           {selectedIds.length > 0 && (
             <span className="px-3.5 py-1.5 rounded-full bg-[#c8eade] text-[#4c6a62] text-xs font-bold animate-scale-up">
@@ -127,7 +127,7 @@ const ExamConfigPanel = ({
       </section>
 
       {/* ── Step 3 & 4: Quantidade + Nível ── */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 animate-fade-up" style={{ animationDelay: '0.16s' }} data-tour="exam-config">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 animate-fade-up" style={{ animationDelay: '0.16s' }} data-tour="exam-config">
         {/* Step 3: Quantidade de Questões (prova only) */}
         {isProva && (
           <section>
@@ -135,12 +135,12 @@ const ExamConfigPanel = ({
               <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#006d5b] text-white text-sm font-bold shadow-lg shadow-[#006d5b]/20">
                 {lockedMode ? '2' : '3'}
               </span>
-              <h3 className="font-['Manrope'] text-xl font-bold text-[#191c1d]">Quantidade de Questões</h3>
+              <h3 className="font-['Manrope'] text-lg sm:text-xl font-bold text-[#191c1d]">Quantidade de Questões</h3>
             </div>
-            <div className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 h-40 flex flex-col justify-center">
+            <div className="bg-white p-5 sm:p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-center">
               <div className="flex justify-between items-end mb-4">
                 <span className="text-xs font-bold text-[#6e7975]">MIN: 5</span>
-                <span className="text-5xl font-['Manrope'] font-black text-[#005344] tabular-nums transition-all duration-200">{config.quantidade}</span>
+                <span className="text-3xl sm:text-5xl font-['Manrope'] font-black text-[#005344] tabular-nums transition-all duration-200">{config.quantidade}</span>
                 <span className="text-xs font-bold text-[#6e7975]">MAX: 60</span>
               </div>
               <Slider
@@ -162,9 +162,9 @@ const ExamConfigPanel = ({
             <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#006d5b] text-white text-sm font-bold shadow-lg shadow-[#006d5b]/20">
               {lockedMode ? (isProva ? '3' : '2') : (isProva ? '4' : '3')}
             </span>
-            <h3 className="font-['Manrope'] text-xl font-bold text-[#191c1d]">Nível de Dificuldade</h3>
+            <h3 className="font-['Manrope'] text-lg sm:text-xl font-bold text-[#191c1d]">Nível de Dificuldade</h3>
           </div>
-          <div className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 h-40 flex items-center justify-center">
+          <div className="bg-white p-5 sm:p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center">
             <div className="flex bg-[#f3f4f5] p-1.5 rounded-xl w-full">
               {[
                 { value: 'basico' as const, label: 'Residente', icon: 'school' },
@@ -191,12 +191,12 @@ const ExamConfigPanel = ({
 
       {/* ── AI Insight Card ── */}
       {selectedIds.length > 0 && (
-        <div className="p-8 rounded-2xl bg-gradient-to-br from-[#006d5b]/5 to-[#005344]/8 border border-[#005344]/10 relative overflow-hidden group hover:shadow-lg transition-all duration-500 animate-fade-up">
+        <div className="p-4 sm:p-8 rounded-2xl bg-gradient-to-br from-[#006d5b]/5 to-[#005344]/8 border border-[#005344]/10 relative overflow-hidden group hover:shadow-lg transition-all duration-500 animate-fade-up">
           <div className="absolute top-0 right-0 w-40 h-40 bg-[#005344]/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-[#005344]/8 transition-all duration-700" />
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#9df3dc]/8 rounded-full -ml-8 -mb-8 blur-2xl group-hover:bg-[#9df3dc]/12 transition-all duration-700" />
-          <div className="relative flex items-center gap-6">
-            <div className="shrink-0 w-14 h-14 rounded-2xl bg-white flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
-              <MI name="auto_awesome" fill className="text-[#005344] text-[24px]" />
+          <div className="relative flex items-start sm:items-center gap-3 sm:gap-6">
+            <div className="shrink-0 w-11 h-11 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
+              <MI name="auto_awesome" fill className="text-[#005344] text-[20px] sm:text-[24px]" />
             </div>
             <div>
               <h4 className="font-['Manrope'] font-bold text-[#005344] mb-1">Curadoria Inteligente Ativa</h4>
@@ -209,11 +209,11 @@ const ExamConfigPanel = ({
       )}
 
       {/* ── Generate Button ── */}
-      <div className="flex flex-col items-center pt-8 border-t border-slate-200/40 animate-fade-up" style={{ animationDelay: '0.24s' }} data-tour="generate-exam-btn">
+      <div className="flex flex-col items-center pt-6 sm:pt-8 border-t border-slate-200/40 animate-fade-up" style={{ animationDelay: '0.24s' }} data-tour="generate-exam-btn">
         <button
           onClick={onGenerate}
           disabled={generating || selectedIds.length === 0}
-          className="btn-shimmer relative overflow-hidden px-14 py-5 rounded-xl font-['Manrope'] text-lg font-extrabold uppercase tracking-widest text-white flex items-center gap-3 shadow-xl hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:translate-y-0 group"
+          className="btn-shimmer relative overflow-hidden w-full sm:w-auto px-8 sm:px-14 py-4 sm:py-5 rounded-xl font-['Manrope'] text-base sm:text-lg font-extrabold uppercase tracking-widest text-white flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:translate-y-0 group"
           style={{ background: 'linear-gradient(135deg, #005344 0%, #006d5b 100%)' }}
         >
           {generating ? (

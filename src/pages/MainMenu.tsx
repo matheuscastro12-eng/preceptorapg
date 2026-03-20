@@ -114,7 +114,7 @@ const MainMenu = () => {
 
         {/* Greeting */}
         <section className="animate-fade-up relative z-10" style={{ animationDelay: '0s' }}>
-          <h2 className="font-['Manrope'] text-3xl sm:text-4xl font-extrabold text-[#191c1d] mb-2 tracking-tight">
+          <h2 className="font-['Manrope'] text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#191c1d] mb-2 tracking-tight">
             Olá, Dr. {userName}!
           </h2>
           <p className="text-[#3e4945] font-medium">
@@ -268,7 +268,7 @@ const MainMenu = () => {
         {/* Legal disclaimer */}
         <section className="border-t border-slate-200/40 pt-8">
           <div className="p-5 rounded-xl bg-[#f3f4f5]">
-            <p className="text-[10px] md:text-xs text-[#6e7975] leading-relaxed text-justify">
+            <p className="text-xs text-[#6e7975] leading-relaxed text-justify">
               O conteúdo disponibilizado pela PreceptorMED tem caráter estritamente educacional e informativo. As informações e ferramentas de IA não substituem o julgamento clínico do profissional médico. (CFM 2.338/2023)
             </p>
           </div>

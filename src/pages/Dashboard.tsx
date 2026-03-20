@@ -219,14 +219,14 @@ const Dashboard = () => {
         {showResult ? (
           <>
             {/* ── Page Header ── */}
-            <div className="mb-8 sm:mb-10">
-              <div className="flex items-center gap-2 text-[#006D5B] font-semibold mb-3">
+            <div className="mb-6 sm:mb-10">
+              <div className="flex items-center gap-2 text-[#006D5B] font-semibold mb-2 sm:mb-3">
                 <MI name="auto_awesome" fill className="text-[16px]" />
                 <span className="text-[11px] uppercase tracking-widest font-bold">
                   {isSeminario ? 'Roteiro de Seminário' : 'AI Summary Insight'}
                 </span>
               </div>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#191c1d] tracking-tight mb-4 font-['Manrope']">
+              <h1 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#191c1d] tracking-tight mb-3 sm:mb-4 font-['Manrope']">
                 {tema}
               </h1>
               <div className="flex flex-wrap items-center gap-2">
@@ -301,15 +301,15 @@ const Dashboard = () => {
             {/* ── Content ── */}
             {viewMode === 'interactive' ? (
               /* ═══ INTERACTIVE VIEW — Section Cards ═══ */
-              <div className="grid grid-cols-12 gap-6 lg:gap-8">
+              <div className="grid grid-cols-12 gap-4 sm:gap-6 lg:gap-8">
                 {/* Main Article Column */}
-                <div className="col-span-12 lg:col-span-8 space-y-6" ref={resultRef}>
+                <div className="col-span-12 lg:col-span-8 space-y-4 sm:space-y-6" ref={resultRef}>
                   {/* Split into section cards */}
                   {(() => {
                     const sections = splitIntoSections(resultado);
                     if (sections.length <= 1) {
                       return (
-                        <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border-l-4 border-[#006D5B] animate-fade-up">
+                        <div className="bg-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-sm border-l-4 border-[#006D5B] animate-fade-up">
                           <MarkdownRenderer content={resultado} isTyping={generating && resultado.length > 0} variant="rich" />
                         </div>
                       );
@@ -317,7 +317,7 @@ const Dashboard = () => {
                     return sections.map((section, i) => (
                       <div
                         key={i}
-                        className={`bg-white p-6 sm:p-8 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 animate-fade-up ${
+                        className={`bg-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 animate-fade-up ${
                           i === 0 ? 'border-l-4 border-[#006D5B]' : 'border border-slate-100/60'
                         }`}
                         style={{ animationDelay: `${i * 0.08}s` }}
@@ -348,7 +348,7 @@ const Dashboard = () => {
                 <div className="col-span-12 lg:col-span-4">
                   <div className="lg:sticky lg:top-24 space-y-6">
                     {/* Clinical Pearls Card */}
-                    <div className="bg-[#005344] p-6 rounded-2xl text-white shadow-xl relative overflow-hidden group hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-500 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+                    <div className="bg-[#005344] p-4 sm:p-6 rounded-2xl text-white shadow-xl relative overflow-hidden group hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-500 animate-fade-up" style={{ animationDelay: '0.1s' }}>
                       <div className="absolute -right-4 -top-4 opacity-10 pointer-events-none group-hover:opacity-20 group-hover:scale-110 transition-all duration-700">
                         <MI name="diamond" className="text-[80px]" />
                       </div>
@@ -517,22 +517,22 @@ const Dashboard = () => {
             <div className="absolute top-40 -right-16 w-56 h-56 bg-[#006D5B]/8 rounded-full blur-3xl pointer-events-none" style={{ animation: 'float 6s ease-in-out infinite reverse' }} />
 
             {/* Hero Title Section */}
-            <div className="mt-8 sm:mt-12 mb-10 text-center relative z-10 animate-fade-up">
+            <div className="mt-2 sm:mt-6 mb-8 sm:mb-10 text-center relative z-10 animate-fade-up">
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#c8eade] text-[#4c6a62] text-xs font-bold mb-5 hover:bg-[#9df3dc] hover:scale-105 transition-all duration-300 cursor-default">
                 <MI name="auto_awesome" fill className="text-[16px]" />
                 INTELIGÊNCIA ARTIFICIAL
               </span>
-              <h2 className="font-['Manrope'] font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#191c1d] tracking-tighter mb-4">
+              <h2 className="font-['Manrope'] font-extrabold text-2xl sm:text-4xl lg:text-5xl text-[#191c1d] tracking-tighter mb-3 sm:mb-4">
                 O que deseja estudar?
               </h2>
-              <p className="text-[#3e4945] text-base sm:text-lg max-w-2xl mx-auto font-medium">
+              <p className="text-[#3e4945] text-sm sm:text-base lg:text-lg max-w-2xl mx-auto font-medium px-2">
                 Gere resumos estruturados e roteiros de seminário com inteligência artificial
                 para otimizar sua prática clínica.
               </p>
             </div>
 
             {/* Bento Grid */}
-            <div className="grid grid-cols-12 gap-6 relative z-10">
+            <div className="grid grid-cols-12 gap-4 sm:gap-6 relative z-10">
               {/* Main Form Card — 8 cols */}
               <div className="col-span-12 lg:col-span-8 animate-fade-up" style={{ animationDelay: '0.1s' }}>
                 <InputPanel
@@ -552,9 +552,9 @@ const Dashboard = () => {
               </div>
 
               {/* Sidebar — 4 cols */}
-              <div className="col-span-12 lg:col-span-4 space-y-6 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+              <div className="col-span-12 lg:col-span-4 space-y-4 sm:space-y-6 animate-fade-up" style={{ animationDelay: '0.2s' }}>
                 {/* AI Insight / Dica de Curadoria Card */}
-                <div className="relative overflow-hidden p-8 rounded-2xl bg-[#005344] text-white shadow-xl group hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-500">
+                <div className="relative overflow-hidden p-5 sm:p-8 rounded-2xl bg-[#005344] text-white shadow-xl group hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-500">
                   <div className="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 group-hover:scale-110 transition-all duration-700" />
                   <div className="absolute -left-8 -bottom-8 w-32 h-32 bg-[#9df3dc]/10 rounded-full blur-2xl group-hover:bg-[#9df3dc]/15 transition-all duration-700" />
                   <div className="relative z-10">

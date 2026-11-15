@@ -166,6 +166,7 @@ const AIChat = () => {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
+      if (e.nativeEvent.isComposing || e.keyCode === 229) return;
       handleSend();
     }
   };

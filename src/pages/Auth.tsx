@@ -296,6 +296,7 @@ const Auth = () => {
                     <Input
                       id="login-email"
                       type="email"
+                      autoComplete="username"
                       placeholder="seu@email.com"
                       value={loginEmail}
                       onChange={(e) => setLoginEmail(e.target.value)}
@@ -309,6 +310,7 @@ const Auth = () => {
                     <Input
                       id="login-password"
                       type="password"
+                      autoComplete="current-password"
                       placeholder="••••••••"
                       value={loginPassword}
                       onChange={(e) => setLoginPassword(e.target.value)}
@@ -420,20 +422,20 @@ const Auth = () => {
                 <form onSubmit={handleSignup} className="space-y-3">
                   <div className="space-y-1.5">
                     <Label htmlFor="signup-name" className="text-[13px] font-medium">Nome completo</Label>
-                    <Input id="signup-name" type="text" placeholder="Seu nome" value={signupName} onChange={(e) => setSignupName(e.target.value)} required disabled={loading} className="h-10 bg-background" />
+                    <Input id="signup-name" type="text" autoComplete="name" placeholder="Seu nome" value={signupName} onChange={(e) => setSignupName(e.target.value)} required disabled={loading} className="h-10 bg-background" />
                   </div>
                   <div className="space-y-1.5">
                     <Label htmlFor="signup-email" className="text-[13px] font-medium">Email</Label>
-                    <Input id="signup-email" type="email" placeholder="seu@email.com" value={signupEmail} onChange={(e) => setSignupEmail(e.target.value)} required disabled={loading} className="h-10 bg-background" />
+                    <Input id="signup-email" type="email" autoComplete="username" placeholder="seu@email.com" value={signupEmail} onChange={(e) => setSignupEmail(e.target.value)} required disabled={loading} className="h-10 bg-background" />
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     <div className="space-y-1.5">
                       <Label htmlFor="signup-password" className="text-[13px] font-medium">Senha</Label>
-                      <Input id="signup-password" type="password" placeholder="Mín. 6 caracteres" value={signupPassword} onChange={(e) => setSignupPassword(e.target.value)} required disabled={loading} className="h-10 bg-background" />
+                      <Input id="signup-password" type="password" autoComplete="new-password" placeholder="Mín. 6 caracteres" value={signupPassword} onChange={(e) => setSignupPassword(e.target.value)} required disabled={loading} className="h-10 bg-background" />
                     </div>
                     <div className="space-y-1.5">
                       <Label htmlFor="signup-confirm" className="text-[13px] font-medium">Confirmar</Label>
-                      <Input id="signup-confirm" type="password" placeholder="Repita a senha" value={signupConfirmPassword} onChange={(e) => setSignupConfirmPassword(e.target.value)} required disabled={loading} className="h-10 bg-background" />
+                      <Input id="signup-confirm" type="password" autoComplete="new-password" placeholder="Repita a senha" value={signupConfirmPassword} onChange={(e) => setSignupConfirmPassword(e.target.value)} required disabled={loading} className="h-10 bg-background" />
                     </div>
                   </div>
                   <Button type="submit" className="w-full h-10 font-semibold" disabled={loading}>
